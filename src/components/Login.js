@@ -21,18 +21,14 @@ const Login = () => {
   const fullname = useRef(null);
 
   const handleSignInToggle = () => {
-    console.log(isSignIn);
     setIsSignIn(!isSignIn);
   };
 
   const handleButtonClick = () => {
-    console.log(email.current.value);
-    console.log(password.current.value);
     const validationResult = checkValidData(
       email.current.value,
       password.current.value
     );
-    console.log(validationResult);
     setErrorMessage(validationResult);
 
     if (validationResult) return;
@@ -87,7 +83,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
           navigate("/browse");
         })
         .catch((error) => {

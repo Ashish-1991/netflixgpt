@@ -4,7 +4,6 @@ import MovieList from "./MovieList";
 
 const SecondryContainer = () => {
   const movies = useSelector((store) => store.movies);
-  console.log(movies.popularMovies);
 
   return (
     <div>
